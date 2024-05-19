@@ -1,32 +1,32 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: applight-deployment
+  name: nginx-deployment
   labels:
-    app: applight
+    app: nginx
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: applight
+      app: nginx
   template:
     metadata:
       labels:
-        app: applight
+        app: nginx
     spec:
       containers:
-      - name: applight-container
-        image: applight-service:latest
+      - name: nginx
+        image: 851725334372.dkr.ecr.us-east-1.amazonaws.com/nginx-server:latest
         ports:
         - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: applight-service
+  name: nginx-service
 spec:
   selector:
-    app: applight
+    app: nginx
   ports:
     - protocol: TCP
       port: 80
