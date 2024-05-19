@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: applight-container
-        image: your-docker-image:latest
+        image: applight-service:latest
         ports:
         - containerPort: 80
 ---
