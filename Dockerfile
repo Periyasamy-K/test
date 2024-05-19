@@ -1,4 +1,4 @@
-FROM Amazon Linux
+FROM AmazonLinux:latest
 RUN yum install httpd -y
 RUN wget https://www.free-css.com/assets/files/free-css-templates/download/page295/applight.zip 
 RUN mv applight.zip /var/www/html/
